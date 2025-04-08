@@ -71,7 +71,7 @@ const getBlogs = async (query: Record<string, unknown>) => {
     .filter()
     .sort()
 
-  const result = await blogs.modelQuery
+  const result = await blogs.exec()
   return result
 }
 
