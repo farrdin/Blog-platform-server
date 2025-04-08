@@ -2,11 +2,9 @@
 
 import { TErrorSources, TGenericErrorResponse } from './errorType'
 
-const handleDuplicateError = (err: any): TGenericErrorResponse => {
-  // Extract value within double quotes using regex
+const duplicateError = (err: any): TGenericErrorResponse => {
   const match = err.message.match(/"([^"]*)"/)
 
-  // The extracted value will be in the first capturing group
   const extractedMessage = match && match[1]
 
   const errorSources: TErrorSources = [
@@ -25,4 +23,4 @@ const handleDuplicateError = (err: any): TGenericErrorResponse => {
   }
 }
 
-export default handleDuplicateError
+export default duplicateError

@@ -1,6 +1,5 @@
-import { BlogModel } from "../blog/blog.model"
-import { UserModel } from "../user/user.model"
-
+import { BlogModel } from '../blog/blog.model'
+import { UserModel } from '../user/user.model'
 
 // block user service
 const blockUser = async (userId: string) => {

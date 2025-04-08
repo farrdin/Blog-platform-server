@@ -9,7 +9,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const authHeader = req.headers.authorization
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      throw new Error('Invalid token format or missing token')
+      throw new Error('Authentication Error')
     }
 
     const token = authHeader.split(' ')[1]

@@ -3,7 +3,7 @@
 import { Request, Response, NextFunction } from 'express'
 import httpStatus from 'http-status'
 
-export const errorHandler = (
+export const globalError = (
   err: any,
   req: Request,
   res: Response,
@@ -14,7 +14,7 @@ export const errorHandler = (
     success: false,
     message: err.message || 'Internal Server Error',
     statusCode,
-    error: err.details || null,
+    error: err,
     stack: process.env.NODE_ENV === 'development' ? err.stack : null,
   })
 }

@@ -2,7 +2,7 @@ import Express, { Application, Request, Response } from 'express'
 import cookieParser from 'cookie-parser'
 import router from './app/routes'
 import cors from 'cors'
-import globalError from './app/middlewares/globalError'
+import { globalError } from './app/middlewares/globalError'
 import notFound from './app/middlewares/notFound'
 
 const app: Application = Express()
@@ -14,7 +14,6 @@ app.use(cors())
 
 // App Api Routes
 app.use('/api', router)
-
 app.get('/', (req: Request, res: Response) => {
   res.send('Blog-Platform Server is running!')
 })

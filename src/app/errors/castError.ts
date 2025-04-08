@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import { TErrorSources, TGenericErrorResponse } from './errorType'
 
-const CastError = (err: mongoose.Error.CastError): TGenericErrorResponse => {
+const castError = (err: mongoose.Error.CastError): TGenericErrorResponse => {
   const errorSources: TErrorSources = [
     {
       path: err.path,
@@ -18,4 +18,4 @@ const CastError = (err: mongoose.Error.CastError): TGenericErrorResponse => {
   }
 }
 
-export default CastError
+export default castError

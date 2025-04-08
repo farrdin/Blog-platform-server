@@ -1,7 +1,7 @@
 import httpStatus from 'http-status'
 import catchAsync from '../../utils/catchAsync'
 import sendResponse from '../../utils/sendResponse'
-import { AuthService } from './auth.route'
+import { AuthService } from './auth.service'
 
 const register = catchAsync(async (req, res) => {
   const result = await AuthService.register(req.body)
@@ -20,7 +20,7 @@ const login = catchAsync(async (req, res) => {
   sendResponse(res, {
     success: true,
     message: 'Login successful',
-    statusCode: httpStatus.ACCEPTED,
+    statusCode: httpStatus.OK,
     data: {
       token: result?.token,
     },
